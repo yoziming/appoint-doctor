@@ -8,25 +8,25 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
- * MybatisPlus配置类
+ * MybatisPlus配置類
  */
-@EnableTransactionManagement //事务处理
+@EnableTransactionManagement //事務處理
 @Configuration
 @MapperScan("yoziming.ad.*.mapper")
 public class MybatisPlusConfig {
 
     /**
-     * 分页插件
+     * 分頁插件
      */
     @Bean
     public PaginationInterceptor paginationInterceptor() {
         PaginationInterceptor paginationInterceptor = new PaginationInterceptor();
-        // paginationInterceptor.setLimit(你的最大单页限制数量，默认 500 条，小于 0 如 -1 不受限制);
+        // paginationInterceptor.setLimit(你的最大單頁限制數量，默認 500 條，小於 0 如 -1 不受限制);
         return paginationInterceptor;
     }
 
     /**
-     * 乐观锁配置
+     * 樂觀鎖配置
      */
     @Bean
     public OptimisticLockerInterceptor optimisticLockerInterceptor() {

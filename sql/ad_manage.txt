@@ -1,0 +1,65 @@
+# Host: localhost  (Version 5.7.19-log)
+# Date: 2020-07-31 14:28:31
+# Generator: MySQL-Front 6.1  (Build 1.26)
+
+CREATE DATABASE IF NOT EXISTS `ad_manage` CHARACTER SET utf8mb4;
+USE `ad_manage`;
+
+#
+# Structure for table "hospital_set"
+#
+
+CREATE TABLE `hospital_set` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '編號',
+  `hoscode` varchar(30) DEFAULT NULL COMMENT '醫院編號',
+  `sign_key` varchar(50) DEFAULT NULL COMMENT '簽名秘鑰',
+  `api_url` varchar(100) DEFAULT NULL COMMENT '統一掛號平台api地址',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '創建時間',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新時間',
+  `is_deleted` tinyint(3) NOT NULL DEFAULT '0' COMMENT '邏輯刪除(1:已刪除，0:未刪除)',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COMMENT='醫院設置表';
+
+#
+# Structure for table "order_info"
+#
+
+CREATE TABLE `order_info` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '編號',
+  `schedule_id` bigint(20) DEFAULT NULL COMMENT '排班id',
+  `patient_id` bigint(20) DEFAULT NULL COMMENT '就診人id',
+  `number` int(11) DEFAULT NULL COMMENT '預約號序',
+  `fetch_time` varchar(50) DEFAULT NULL COMMENT '建議取號時間',
+  `fetch_ dress` varchar(255) DEFAULT NULL COMMENT '取號地點',
+  `amount` decimal(10,0) DEFAULT NULL COMMENT '醫事服務費',
+  `pay_time` datetime DEFAULT NULL COMMENT '支付時間',
+  `quit_time` datetime DEFAULT NULL COMMENT '退號時間',
+  `order_status` tinyint(3) DEFAULT NULL COMMENT '訂單狀態',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '創建時間',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新時間',
+  `is_deleted` tinyint(3) NOT NULL DEFAULT '0' COMMENT '邏輯刪除(1:已刪除，0:未刪除)',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COMMENT='訂單表';
+
+#
+# Structure for table "schedule"
+#
+
+CREATE TABLE `schedule` (
+  `id` bigint(20) NOT NULL DEFAULT '0' COMMENT '編號',
+  `hoscode` varchar(30) DEFAULT NULL COMMENT '醫院編號',
+  `depcode` varchar(30) DEFAULT NULL COMMENT '科室編號',
+  `title` varchar(20) DEFAULT NULL COMMENT '職稱',
+  `docname` varchar(20) DEFAULT NULL COMMENT '醫生名稱',
+  `skill` text COMMENT '擅長技能',
+  `work_date` date DEFAULT NULL COMMENT '安排日期',
+  `work_time` tinyint(3) DEFAULT '0' COMMENT '安排時間（0：上午 1：下午）',
+  `reserved_number` int(11) DEFAULT '0' COMMENT '可預約數',
+  `available_number` int(11) DEFAULT '0' COMMENT '剩餘預約數',
+  `amount` decimal(10,0) DEFAULT NULL COMMENT '掛號費',
+  `status` tinyint(3) DEFAULT NULL COMMENT '排班狀態（-1：停診 0：停約 1：可約）',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '創建時間',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新時間',
+  `is_deleted` tinyint(3) NOT NULL DEFAULT '0' COMMENT '邏輯刪除(1:已刪除，0:未刪除)',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='醫生日程安排表';
