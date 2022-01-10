@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.util.Date;
 
 /**
- * Mybatis plus Handler配置类
+ * Mybatis plus Handler配置類
  */
 @Component
 public class CommonMetaObjectHandler implements MetaObjectHandler {
@@ -17,6 +17,7 @@ public class CommonMetaObjectHandler implements MetaObjectHandler {
         this.setFieldValByName("createTime", new Date(), metaObject);
         this.setFieldValByName("updateTime", new Date(), metaObject);
     }
+
     @Override
     public void updateFill(MetaObject metaObject) {
         this.setFieldValByName("updateTime", new Date(), metaObject);

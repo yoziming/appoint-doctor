@@ -7,20 +7,30 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="service-cmn" />
         <module name="common-util" />
+        <module name="service-user" />
+        <module name="rabbit-util" />
         <module name="model" />
         <module name="service-util" />
         <module name="service-hosp" />
-        <module name="rabbit-util" />
+        <module name="hospital-manage" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mongoTest" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="common-util" options="-parameters" />
+      <module name="hospital-manage" options="-parameters" />
       <module name="model" options="-parameters" />
+      <module name="mongoTest" options="-parameters" />
       <module name="rabbit-util" options="-parameters" />
+      <module name="service-cmn" options="-parameters" />
       <module name="service-hosp" options="-parameters" />
+      <module name="service-user" options="-parameters" />
       <module name="service-util" options="-parameters" />
     </option>
   </component>

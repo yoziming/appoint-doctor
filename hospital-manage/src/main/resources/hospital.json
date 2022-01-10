@@ -1,0 +1,142 @@
+[
+  {
+    "hoscode": "1",
+    "hosname": "北京協和醫院",
+    "picture": "https://img.114yygh.com/image/image-003/23176337663806575.png",
+    "hostype": "三級甲等",
+    "releaseTime": "08:30"
+  },
+  {
+    "hoscode": "162",
+    "hosname": "中國人民解放軍總醫院(301醫院)",
+    "picture": "https://img.114yygh.com/image/image-003/23177271556061774.png",
+    "hostype": "三級甲等",
+    "releaseTime": "08:30"
+  },
+  {
+    "hoscode": "12",
+    "hosname": "北京大學第一醫院",
+    "picture": "https://img.114yygh.com/image/image-003/23176618472499403.png",
+    "hostype": "三級甲等",
+    "releaseTime": "16:00"
+  },
+  {
+    "hoscode": "120",
+    "hosname": "北京大學人民醫院",
+    "picture": "https://img.114yygh.com/image/image-003/23177084467557645.png",
+    "hostype": "三級甲等",
+    "releaseTime": "00:00"
+  },
+  {
+    "hoscode": "142",
+    "hosname": "北京大學第三醫院",
+    "picture": "https://img.114yygh.com/image/image-003/23176368020632682.png",
+    "hostype": "三級甲等",
+    "releaseTime": "07:00"
+  },
+  {
+    "hoscode": "3",
+    "hosname": "中國醫學科學院腫瘤醫院",
+    "picture": "https://img.114yygh.com/image/image-003/23176410054422867.png",
+    "hostype": "三級甲等",
+    "releaseTime": "09:00"
+  },
+  {
+    "hoscode": "4",
+    "hosname": "中國醫學科學院阜外醫院",
+    "picture": "https://img.114yygh.com/image/image-003/23176448081185568.png",
+    "hostype": "三級甲等",
+    "releaseTime": "09:00"
+  },
+  {
+    "hoscode": "HFG001202",
+    "hosname": "北京市海淀區同步中醫骨科醫院",
+    "picture": "https://img.114yygh.com/image/image-004/26016757589138643.png",
+    "hostype": "二級專科醫院",
+    "releaseTime": "10:00"
+  },
+  {
+    "hoscode": "H05110040",
+    "hosname": "民航總醫院",
+    "picture": "https://img.114yygh.com/image/image-003/23176875181268638.png",
+    "hostype": "三級綜合醫院",
+    "releaseTime": "00:00"
+  },
+  {
+    "hoscode": "H13151001",
+    "hosname": "北京中醫醫院順義醫院",
+    "picture": "https://img.114yygh.com/image/image-003/23176924103321432.png",
+    "hostype": "三級甲等中醫醫院",
+    "releaseTime": "10:00"
+  },
+  {
+    "hoscode": "H08110008",
+    "hosname": "航天中心醫院",
+    "picture": "https://img.114yygh.com/image/image-003/23176697889298621.png",
+    "hostype": "三級綜合醫院",
+    "releaseTime": "08:00"
+  },
+  {
+    "hoscode": "H112628",
+    "hosname": "北京大學國際醫院",
+    "picture": "https://img.114yygh.com/image/image-003/23177603439519187.png",
+    "hostype": "三級綜合醫院",
+    "releaseTime": "07:00"
+  },
+  {
+    "hoscode": "H01110009",
+    "hosname": "北京市隆福醫院",
+    "picture": "https://img.114yygh.com/image/image-003/23178749520353780.png",
+    "hostype": "三級綜合醫院",
+    "releaseTime": "08:00"
+  },
+  {
+    "hoscode": "H13110001",
+    "hosname": "北京市順義區醫院",
+    "picture": "https://img.114yygh.com/naja/hospital/167.jpg",
+    "hostype": "三級綜合醫院",
+    "releaseTime": "00:00"
+  },
+  {
+    "hoscode": "H11151001",
+    "hosname": "北京中醫藥大學房山醫院",
+    "picture": "https://img.114yygh.com/image/image-003/23177658343814562.png",
+    "hostype": "三級甲等中醫醫院",
+    "releaseTime": "22:00"
+  },
+  {
+    "hoscode": "100",
+    "hosname": "首都醫科大學附屬北京天壇醫院",
+    "picture": "https://img.114yygh.com/image/image-003/23176379889847619.png",
+    "hostype": "三級甲等",
+    "releaseTime": "09:30"
+  },
+  {
+    "hoscode": "108",
+    "hosname": "首都醫科大學附屬北京安貞醫院",
+    "picture": "https://img.114yygh.com/image/image-003/23177148062708174.png",
+    "hostype": "三級甲等",
+    "releaseTime": "09:15"
+  },
+  {
+    "hoscode": "113",
+    "hosname": "首都醫科大學宣武醫院",
+    "picture": "https://img.114yygh.com/image/image-003/23177847315489183.png",
+    "hostype": "三級甲等",
+    "releaseTime": "14:00"
+  },
+  {
+    "hoscode": "105",
+    "hosname": "首都醫科大學附屬北京同仁醫院",
+    "picture": "https://img.114yygh.com/image/image-003/23176921733723049.png",
+    "hostype": "三級甲等",
+    "releaseTime": "8:45"
+  },
+  {
+    "hoscode": "34",
+    "hosname": "首都醫科大學附屬北京兒童醫院",
+    "picture": "https://img.114yygh.com/image/image-003/23176687826086614.png",
+    "hostype": "三級甲等",
+    "releaseTime": "14:00"
+  }
+]

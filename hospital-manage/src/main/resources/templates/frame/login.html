@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="common/meta :: meta"></head>
+<body class="gray-bg">
+<div class="middle-box text-center loginscreen  animated fadeInDown">
+    <div>
+        <div>
+            <h1 class="logo-name">TD</h1>
+        </div>
+        <h3>歡迎使用醫院接口模擬管理系統</h3>
+        <form action="#" class="ec" method="post" role="form">
+            <div class="form-group">
+                <input class="form-control" id="userName" maxlength="15" name="userName" placeholder="用戶名" type="text"
+                       value="admin"/>
+            </div>
+            <div class="form-group">
+                <input class="form-control" id="password" maxlength="15" name="password" placeholder="密碼" type="password"
+                       value="111111"/>
+            </div>
+            <div class="form-group">
+                <input class="form-control" id="code" maxlength="4" name="code" placeholder="驗證碼" style="width:180px;display:inline;float:left;" type="text"
+                       value=""/>
+                <a href="javascript:" id="a-code" style="float:right;display:inline">
+                    <img height="30" id="img-code" src="/validate/code" style="margin-left:5px;" width="100"/>
+                </a>
+            </div>
+            <div class="hr-line-dashed" style="clear: both;"></div>
+            <button class="btn btn-primary block full-width m-b" id="login" type="button">登 錄</button>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $("#login").on("click", function () {
+            var userName = $("#userName").val();
+            var password = $("#password").val();
+            var code = $("#code").val();
+            if (userName == "") {
+                opt.alert("請輸入您的用戶名!");
+                return;
+            }
+            if (password == "") {
+                opt.alert("請輸入您的密碼!");
+                return;
+            }
+            if (code == "") {
+                opt.alert("請輸入您的驗證碼!");
+                return;
+            }
+            ajax.post("/login", {
+                userName: userName,
+                password: password,
+                code: code
+            }, function (data) {
+                window.location.href = "/";
+            }, function (data) {
+                opt.alert(data.message);
+                if (data.message.indexOf("驗證碼") != -1) {
+                    $("#a-code").trigger("click");
+                }
+            });
+        });
+        $("#a-code").on("click", function () {
+            $('#img-code').attr('src', '/validate/code?v=' + Math.random());
+        });
+        if (window.top !== window.self) {
+            window.top.location = window.location;
+        }
+        document.onkeydown = function (e) {
+            var evt = e || window.event || null;
+            if (evt.keyCode == 13) {
+                document.getElementById('login').click();
+            }
+        }
+    });
+</script>
+</body>
+</html>

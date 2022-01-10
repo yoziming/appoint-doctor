@@ -19,20 +19,20 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class Swagger2Config {
 
     @Bean
-    public Docket webApiConfig(){
-
+    public Docket webApiConfig() {
+        //只显示api路徑下的頁面
         return new Docket(DocumentationType.SWAGGER_2)
                 .groupName("webApi")
                 .apiInfo(webApiInfo())
                 .select()
-                //只显示api路徑下的頁面
+
                 .paths(Predicates.and(PathSelectors.regex("/api/.*")))
                 .build();
 
     }
 
     @Bean
-    public Docket adminApiConfig(){
+    public Docket adminApiConfig() {
 
         return new Docket(DocumentationType.SWAGGER_2)
                 .groupName("adminApi")
@@ -44,7 +44,7 @@ public class Swagger2Config {
 
     }
 
-    private ApiInfo webApiInfo(){
+    private ApiInfo webApiInfo() {
 
         return new ApiInfoBuilder()
                 .title("網站-API文檔")
@@ -54,7 +54,7 @@ public class Swagger2Config {
                 .build();
     }
 
-    private ApiInfo adminApiInfo(){
+    private ApiInfo adminApiInfo() {
 
         return new ApiInfoBuilder()
                 .title("後台管理系統-API文檔")
@@ -63,6 +63,5 @@ public class Swagger2Config {
                 .contact(new Contact("yoziming", "http://yoziming.com", "123@com"))
                 .build();
     }
-
 
 }

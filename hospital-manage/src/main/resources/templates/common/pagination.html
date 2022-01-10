@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="pagination">
+    <input id="pageSize" name="pageSize" th:value="${pageinfo.pageSize}" type="hidden"/>
+    <input id="pageNum" name="pageNum" th:value="${pageinfo.pageNum}" type="hidden"/>
+    <div class="row">
+        <div class="col-sm-6">
+            <div aria-live="polite" aria-relevant="all" class="dataTables_info" id="DataTables_Table_0_info"
+                 role="alert">
+                當前第<span th:text="${pageinfo.pageNum }"></span>頁/共<span th:text="${pageinfo.pages }"></span>頁&nbsp;&nbsp;共<span
+                    id="pageTotal" th:text="${pageinfo.total }"></span>條記錄&nbsp;&nbsp;
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="dataTables_paginate paging_simple_numbers"
+                 id="DataTables_Table_0_paginate">
+                <ul class="pagination">
+                    <li class="paginate_button previous" th:if="${!pageinfo.isFirstPage}"><a
+                            href="javascript:document.forms.ec.pageNum.value=1;document.forms.ec.submit();">第一頁</a></li>
+                    <li class="paginate_button previous" th:if="${pageinfo.isFirstPage}"><a href="javascript:">第一頁</a>
+                    </li>
+                    <li class="paginate_button previous" th:if="${!pageinfo.isFirstPage}"><a
+                            th:href="'javascript:document.forms.ec.pageNum.value='+${pageinfo.prePage}+';document.forms.ec.submit();'">上一頁</a>
+                    </li>
+                    <li class="paginate_button previous disabled" th:if="${pageinfo.isFirstPage}"><a href="javascript:">上一頁</a>
+                    </li>
+                    <li th:class="${i == pageinfo.pageNum } ? 'paginate_button active' : 'paginate_button'"
+                        th:each="i : ${pageinfo.navigatepageNums}">
+                        <a th:href="'javascript:document.forms.ec.pageNum.value='+${i}+';document.forms.ec.submit();'"><span
+                                th:text="${i}"></span></a>
+                    </li>
+                    <li class="paginate_button next" th:if="${!pageinfo.isLastPage}"><a
+                            th:href="'javascript:document.forms.ec.pageNum.value='+${pageinfo.nextPage}+';document.forms.ec.submit();'">下一頁</a>
+                    </li>
+                    <li class="paginate_button next disabled" th:if="${pageinfo.isLastPage}"><a
+                            href="javascript:">下一頁</a></li>
+                    <li class="paginate_button next" th:if="${!pageinfo.isLastPage}"><a
+                            th:href="'javascript:document.forms.ec.pageNum.value='+${pageinfo.pages}+';document.forms.ec.submit();'">尾頁</a>
+                    </li>
+                    <li class="paginate_button next" th:if="${pageinfo.isLastPage}"><a href="javascript:">尾頁</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

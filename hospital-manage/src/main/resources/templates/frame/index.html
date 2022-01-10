@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="common/meta :: meta"></head>
+<script th:inline="javascript">
+    $(function () {
+    });
+</script>
+<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+<div class="yb-top-title clearfix" style="height: 75px; top:0px;">
+    <!--<span class="logo-bg"><img th:src="@{/img/wd/logo2.png}" alt="wanda" width="48"/></span>-->
+    <span class="yb-top-desc fl hjyz">醫院接口模擬管理系統</span>
+    <span class="yb-help-center fr">
+        <!--
+        <i class="fa fa-question-circle"></i>
+        -->
+        <a href="javascript:void(0);">歡迎&nbsp;admin&nbsp;登錄&nbsp;&nbsp;|</a>
+        <a href="/logout">退出</a>
+    </span>
+</div>
+<div id="wrapper">
+    <!--左側導航開始-->
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="side-menu">
+                <li class="nav-header" style="display: none;">
+                    <div class="dropdown profile-element">
+                        <span><img alt="image" class="" style="width: 160px;" th:src="@{/img/sd/logo-t.png}"/></span>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="display: none;">
+                            <span class="clear">
+                                	<!-- <span class="text-muted text-xs block">管理系統</span> -->
+                                	<span class="text-muted text-xs text-center block margin-top10">admins</span>
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="javascript:opt.openWin('/sysUser/pswd','修改密碼',630,510)">修改密碼</a></li>
+                            <li class="divider"></li>
+                            <li><a th:href="@{/index/logout}">安全退出</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-flask"></i>
+                        <span class="nav-label"> 醫院推送管理</span>
+                        <span class="fa arrow"></span>
+                    </a>
+                    <ul class="nav nav-second-level">
+                        <li><a class="J_menuItem" data-index="91" th:href="@{/hospitalSet/index}">醫院設置</a></li>
+                        <li><a class="J_menuItem" data-index="91" th:href="@{/hospital/index}">醫院管理</a></li>
+                        <li><a class="J_menuItem" data-index="92" th:href="@{/department/list}">科室列表</a></li>
+                        <li><a class="J_menuItem" data-index="91" th:href="@{/schedule/list}">排班列表</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--左側導航結束-->
+    <!--右側部分開始-->
+    <div class="gray-bg dashbard-1" id="page-wrapper">
+        <div class="row border-bottom" style="display: none;">
+            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header"><a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i
+                        class="fa fa-bars"></i> </a>
+                    <form action="http://www.zi-han.net/theme/hplus/search_results.html" class="navbar-form-custom" method="post"
+                          role="search">
+                        <div class="form-group">
+                            <input class="form-control" id="top-search" name="top-search" placeholder='管理系統' readonly="readonly"
+                                   type="text"/>
+                        </div>
+                    </form>
+                </div>
+                <!--
+                <ul class="nav navbar-top-links navbar-right">
+                    <li class="dropdown">
+                        <a href="acl/logout" class="roll-nav count-info J_tabExit">
+                            <i class="fa fa fa-sign-out"></i>退出</span>
+                        </a>
+                    </li>
+                </ul>
+                  -->
+            </nav>
+        </div>
+        <div class="row content-tabs">
+            <button class="roll-nav roll-left J_tabLeft"><i class="fa fa-backward"></i>
+            </button>
+            <nav class="page-tabs J_menuTabs">
+                <div class="page-tabs-content">
+                    <a class="active J_menuTab" data-id="index_v1.html" href="javascript:;">首頁</a>
+                </div>
+            </nav>
+            <button class="roll-nav roll-right J_tabRight"><i class="fa fa-forward"></i>
+            </button>
+            <div class="btn-group roll-nav roll-right">
+                <button class="dropdown J_tabClose" data-toggle="dropdown">關閉操作<span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                    <li class="J_tabShowActive"><a>定位當前選項卡</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="J_tabCloseAll"><a>關閉全部選項卡</a>
+                    </li>
+                    <li class="J_tabCloseOther"><a>關閉其他選項卡</a>
+                    </li>
+                </ul>
+            </div>
+            <a class="navbar-minimalize roll-nav roll-right J_tabExit" href="#" title="收縮展開菜單"><i
+                    class="fa fa-bars"></i> </a>
+            <!--<a th:href="@{/index/logout}" class=""><i class="fa fa fa-sign-out"></i> 退出</a>-->
+        </div>
+        <!-- 包在裏面了 -->
+        <div class="row J_mainContent" id="content-main">
+            <iframe class="J_iframe" data-id="index_v1.html" frameborder="0" height="100%" name="iframe0" th:src="@{/main}"
+                    width="100%"></iframe>
+        </div>
+        <!--         <div class="footer">
+                    <div class="pull-right">&copy; 版權所有：萬達
+                    </div>
+                </div> -->
+    </div>
+    <!--右側部分結束-->
+    <!--右側邊欄開始-->
+    <div id="right-sidebar">
+        <div class="sidebar-container">
+        </div>
+    </div>
+    <!--右側邊欄結束-->
+</div>
+<script th:src="@{/js/bootstrap.min.js}" type="text/javascript"></script>
+<script th:src="@{/js/plugins/metisMenu/jquery.metisMenu.js}" type="text/javascript"></script>
+<script th:src="@{/js/plugins/slimscroll/jquery.slimscroll.min.js}" type="text/javascript"></script>
+<script th:src="@{/js/hplus.min.js}" type="text/javascript"></script>
+<script th:src="@{/js/contabs.min.js}" type="text/javascript"></script>
+<script th:src="@{/js/plugins/pace/pace.min.js}" type="text/javascript"></script>
+<script th:src="@{/js/nav.js}" type="text/javascript"></script>
+</body>
+</html>

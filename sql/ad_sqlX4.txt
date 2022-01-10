@@ -22,7 +22,7 @@ CREATE TABLE `dict` (
   `dict_code` varchar(20) DEFAULT NULL COMMENT '編碼',
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '創建時間',
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新時間',
-  `is_deleted` tinyint(3) NOT NULL DEFAULT '1' COMMENT '刪除標記（0:不可用 1:可用）',
+  `is_deleted` tinyint(3) NOT NULL DEFAULT '0' COMMENT '刪除標記（1:已刪除，0:未刪除）',
   PRIMARY KEY (`id`),
   KEY `idx_dict_code` (`dict_code`),
   KEY `idx_parent_id` (`parent_id`)
